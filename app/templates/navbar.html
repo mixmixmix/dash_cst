@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+    <a class="navbar-brand title-text" href="#">CST - Dashboard</a>
+        <form name="dropdown-form" action="" method="POST">
+            <select class="my-dropdown-menu" name="dropdown-select" style="padding:3px;border-radius:3px;">
+                {% for ind in indicators_list %}
+                <!-- <option value="1"> {{ind}} </option> -->
+                <option value="{{ind}}" {% if selected_indicator==ind %} selected {% endif %}>{{ ind }} </option>
+                {% endfor %}
+            </select>
+            <button class="submit-btn" type="submit">Select</button>
+        </form>
+</nav>

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-4">
+                <p class="title">Indicator description</p>
+                <p>Showing: {{ selected_indicator | safe }}</p>
+                <p>{{ description_indicator | safe }}</p>
+            </div>
+            <div class="col-8">
+                {{ div_key_chart | safe }}
+            </div>
+        </div>
+        <div class="row mt-5">
+            {{ div_key_chart | safe }}
+        </div>
+    </div>
+
+    {{ script_key_chart | safe }}
+{% endblock %}
