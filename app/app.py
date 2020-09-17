@@ -32,10 +32,12 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def chart():
     indicators_list = indicators_table.columns
-
     selected_indicator = request.form.get('dropdown-select')
 
+    if selected_indicator == 0 or selected_indicator == None:
+        selected_indicator = indicators_list[0]
     key_chart = redraw(selected_indicator)
+
 
     script_key_chart, div_key_chart = components(key_chart)
 
